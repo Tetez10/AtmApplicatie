@@ -20,7 +20,7 @@ namespace AtmApplicatie
            
 
         }
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PC\Documents\AtmDb.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection Con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\PC\\Documents\\AtmDb.mdf;Integrated Security=True;Connect Timeout=30");
         
         private void CreateBtn_Click(object sender, EventArgs e)
         {

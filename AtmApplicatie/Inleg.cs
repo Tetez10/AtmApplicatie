@@ -47,7 +47,7 @@ namespace AtmApplicatie
             try
             {
                conn.Open();
-               SqlCommand cmd1 = new SqlCommand("update TransanctieTable set Amount = Amount +  '" + depos +"' where Tcode = '" + accno+ "'",conn) ;
+               SqlCommand cmd1 = new SqlCommand("update TransanctieTable set Amount = Amount +  '" + depos +"' where AccountNummer = '" + accno+ "'",conn) ;
                cmd1.ExecuteNonQuery();
                 MessageBox.Show("Deposit Succeed ! ");
                conn.Close();

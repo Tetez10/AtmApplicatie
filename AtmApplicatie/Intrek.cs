@@ -31,6 +31,7 @@ namespace AtmApplicatie
 
         }
         
+        // probleem met mijn withdraw maar inleg werkt wel
 
             public void intrek()
             {
@@ -44,7 +45,7 @@ namespace AtmApplicatie
                 try
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("update TransanctieTable set Amount = Amount - '" + withdraw + "' where Tcode = '" + accno+ "'", conn);
+                    SqlCommand cmd = new SqlCommand("update TransanctieTable set Amount = Amount - '" + withdraw + "' where AccountNummer = '" + accno+ "'", conn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("WithDraw Succeed! ");
                     conn.Close();
