@@ -51,7 +51,7 @@ namespace AtmApplicatie
                   
                     cmd.ExecuteNonQuery();
                     cmd1.ExecuteNonQuery();
-                    MessageBox.Show("account created");
+                    MessageBox.Show("account created", " your account Number is = @AccountNumber");
                     Con.Close();
 
                     Connexion cn = new Connexion();
