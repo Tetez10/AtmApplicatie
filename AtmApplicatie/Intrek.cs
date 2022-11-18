@@ -56,7 +56,7 @@ namespace AtmApplicatie
                 {
                     MessageBox.Show(ex.Message);
                 }
-                finally { conn.Close(); }
+                finally { conn.Close();}
             }
             private void button1_Click(object sender, EventArgs e)
             {
