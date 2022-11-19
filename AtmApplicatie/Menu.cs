@@ -22,6 +22,7 @@ namespace AtmApplicatie
             Inleg obj = new Inleg();
             obj.Show();
             this.Hide();
+
         }
 
         private void IntrekBtn_Click(object sender, EventArgs e)
