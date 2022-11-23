@@ -23,6 +23,7 @@ namespace AtmApplicatie
         SqlConnection conn = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={info};Integrated Security=True;Connect Timeout=30");
 
         private void Connexion_Load(object sender, EventArgs e)
+
         {
 
         }
