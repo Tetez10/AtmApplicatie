@@ -15,7 +15,8 @@ namespace AtmApplicatie
 {
     public partial class Inleg : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PC\Documents\AtmDb.mdf;Integrated Security=True;Connect Timeout=30");
+        static string info = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\", "AtmDb.mdf"));
+        SqlConnection conn = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={info};Integrated Security=True;Connect Timeout=30");
 
         public Inleg()
         {

@@ -19,11 +19,14 @@ namespace AtmApplicatie
             InitializeComponent();
           
         }
-       
+        static string info = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\", "AtmDb.mdf"));
+        SqlConnection conn = new SqlConnection($"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={info};Integrated Security=True;Connect Timeout=30");
+
         private void CheckBalance()
         
         {
-            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\PC\\Documents\\AtmDb.mdf;Integrated Security=True;Connect Timeout=30");
+        
+            
            conn.Open();
             SqlCommand cmd = new SqlCommand("select Amount from TransanctieTable where AccountNummer=@nummer");
             cmd.Parameters.AddWithValue("@nummer", AccountNrTb.Text);

@@ -17,6 +17,8 @@ namespace AtmApplicatie
         {
             InitializeComponent();
         }
+        static string info = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\", "AtmDb.mdf"));
+
 
         private void Transactieslist_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -32,7 +34,9 @@ namespace AtmApplicatie
 
         private void Transactions_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PC\Documents\AtmDb.mdf;Integrated Security=True;Connect Timeout=30");
+            
+
+            SqlConnection conn = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={info};Integrated Security=True;Connect Timeout=30");
 
             SqlDataAdapter sda = new SqlDataAdapter("SElECT * FROM TransanctieTable", conn);
             DataTable Transancties = new DataTable();

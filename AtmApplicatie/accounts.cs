@@ -18,11 +18,13 @@ namespace AtmApplicatie
         {
             InitializeComponent();
         }
+        static string info = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\", "AtmDb.mdf"));
+
 
         private void accounts_Load(object sender, EventArgs e)
         {
             
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PC\Documents\AtmDb.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection conn = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={info};Integrated Security=True;Connect Timeout=30");
           
             SqlDataAdapter sda = new SqlDataAdapter("SElECT * FROM AccountTable",conn);
             DataTable AccountsList = new DataTable();  
